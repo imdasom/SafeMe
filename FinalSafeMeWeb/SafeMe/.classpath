@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/servlet-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/jasper.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/jsp-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/el-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
+	<classpathentry kind="src" path="WEB-INF/src"/>
+	<classpathentry kind="src" output="work" path="work"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/apache-mime4j.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/cos.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/fluent-hc-4.5.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/httpclient-4.5.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/httpclient-cache-4.5.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/httpclient-win-4.5.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/httpcore-4.4.3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/httpmime-4.5.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/httpmime.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jasper.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jna-platform-4.1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/json_simple-1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/mysql-connector-java-5.1.36-bin.jar"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>
