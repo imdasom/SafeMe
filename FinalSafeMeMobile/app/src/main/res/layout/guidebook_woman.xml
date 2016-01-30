@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="성폭력 신고/상담"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#bf9000"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="연결을 원하는 버튼을 눌러주세요."
+            android:textColor="#848484" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="메세지 혹은 전화로 바로 연결됩니다."
+            android:textColor="#848484" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/guide_woman1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#ffc000"
+        android:padding="10dp"
+        android:text="한국 성폭력 상담소 통화 : 02-338-5801~2"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/guide_woman2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#ffc000"
+        android:padding="5dp"
+        android:text="한국여성민우회성폭력상담소 통화 : 02-3351858"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/guide_woman3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#ffc000"
+        android:padding="5dp"
+        android:text="여성긴급전화 통화 : 1366"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/guide_woman4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#ffc000"
+        android:padding="5dp"
+        android:text="대한법률구조공단 통화 : 132"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/guide_woman5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#ffc000"
+        android:padding="5dp"
+        android:text="한국여성의전화 통화 : 02-2263-6465"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/guide_woman6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#ffc000"
+        android:padding="5dp"
+        android:text="위민넷 여성위기 상담 통화 : 02-2269-0212"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/cancelWoman"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:background="#00ff0000"
+        android:text="확인"
+        android:textColor="#ffc000" />
+
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gray_pressed">#848484</color>
+    <color name="gray_nopressed">#bdbdbd</color>
+    <color name="green_pressed">#586f28</color>
+    <color name="green_nopressed">#99b55e</color>
+    <color name="red_pressed">#a63829</color>
+    <color name="red_nopressed">#dd3f2a</color>
+    <color name="list_pressed">#f3f3f3</color>
+    <color name="list_nopressed">#ffffff</color>
+    <color name="transparent">#00000000</color>
+
+</resources>

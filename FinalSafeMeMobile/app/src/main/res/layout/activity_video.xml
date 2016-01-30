@@ -1,0 +1,61 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/surface_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:background="@android:color/black" >
+
+    <net.majorkernelpanic.streaming.gl.SurfaceView
+        android:id="@+id/surface"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <ProgressBar
+        android:visibility="gone"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_gravity="left|top" />
+
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/log"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="log record\n"
+        android:background="#EEFFFFFF"
+        android:scrollbars="vertical"/>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="top">
+
+        <Button
+            android:id="@+id/stopAndSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_red"
+            android:layout_margin="10dp"
+            android:text="영상전송"/>
+
+        <Button
+            android:id="@+id/toMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_gray"
+            android:layout_margin="10dp"
+            android:text="메인으로"/>
+    </LinearLayout>
+
+</FrameLayout>

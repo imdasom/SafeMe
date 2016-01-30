@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#fff"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="실종신고"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#bf9000"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="연결을 원하는 버튼을 눌러주세요."
+            android:textColor="#848484" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="메세지 혹은 전화로 바로 연결됩니다."
+            android:textColor="#848484" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/guide_kids1"
+        android:background="#ffc000"
+        android:textColor="#000"
+        android:padding="10dp"
+        android:textSize="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="전화신고(112) : 실종아동 등 신고"
+        android:layout_marginTop="10dp" />
+    <Button
+        android:id="@+id/guide_kids2"
+        android:background="#ffc000"
+        android:textColor="#000"
+        android:padding="5dp"
+        android:textSize="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="전화상담 : 실종아동등 상담"
+        android:layout_marginTop="10dp" />
+    <Button
+        android:id="@+id/guide_kids3"
+        android:background="#ffc000"
+        android:textColor="#000"
+        android:padding="5dp"
+        android:textSize="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="문자상담 : 내용 및 사진을 입력 후 전송"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/cancelKids"
+        android:background="#00ff0000"
+        android:textColor="#ffc000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="확인"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>
