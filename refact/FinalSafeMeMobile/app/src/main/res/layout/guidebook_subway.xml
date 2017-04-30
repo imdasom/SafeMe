@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="지하철 신고 서비스"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#bf9000"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="신고하기 원하는 지하철 라인을 눌러주세요."
+            android:textColor="#848484" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="메세지 혹은 전화로 바로 연결됩니다."
+            android:textColor="#848484" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/guide_subway1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#ffc000"
+        android:padding="10dp"
+        android:text="지하철 1~4호선 : 1577-1234"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/guide_subway2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#ffc000"
+        android:padding="5dp"
+        android:text="지하철 5~8호선 : 1577-5678"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/guide_subway3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#ffc000"
+        android:padding="5dp"
+        android:text="중앙선, 경춘선 : 1544-7769"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/guide_subway4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#ffc000"
+        android:padding="5dp"
+        android:text="9호선 : 02-2656-0009 (전화만가능)"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/cancelSubway"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:background="#00ff0000"
+        android:text="확인"
+        android:textColor="#ffc000" />
+
+</LinearLayout>

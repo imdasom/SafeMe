@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="핸드폰번호 입력"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#689900"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="'-'를 제외한 핸드폰 번호를 입력해주세요."
+            android:textColor="#848484" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="신고시 사용됩니다."
+            android:textColor="#848484" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etPhonenum1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#f0f0f0"
+        android:hint="010xxxxxxxx"
+        android:padding="20dp"
+        android:textColor="#585858"
+        android:textColorHint="#bdbdbd" />
+
+    <EditText
+        android:id="@+id/etPhonenum2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#f0f0f0"
+        android:hint="010xxxxxxxx"
+        android:padding="20dp"
+        android:textColor="#585858"
+        android:textColorHint="#bdbdbd"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_gray"
+            android:text="취소" />
+
+
+        <Button
+            android:id="@+id/btnOK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_green"
+            android:text="확인" />
+
+    </LinearLayout>
+
+</LinearLayout>

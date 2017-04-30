@@ -1,0 +1,142 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>´ëÇÑ¹Î±¹ Ä¡¾È ¹æÁö ÇÁ·ÎÁ§Æ®</title>
+<style type="text/css">
+<!--
+body {
+	margin: 0;
+	padding: 0;
+	font: bold 15px/1.5em ¸¼Àº °íµñ, Verdana, Arial, Helvetica, sans-serif;
+}
+
+h2 {
+	font: bold 80px ¸¼Àº °íµñ, Verdana, Arial, Helvetica, sans-serif;
+	color: #000;
+	margin: 26px;
+	padding: 0px 0px 0px 0px;
+}
+
+/*- Menu Tabs E--------------------------- */
+#tabsE {
+	float: left;
+	width: 100%;
+	background: #000;
+	font-size: 150%;
+	line-height: normal;
+	height: 40px;
+}
+
+#tabsE ul {
+	margin: 0;
+	/* padding:10px 10px 0 50px; */
+	list-style: none;
+	text-align: center;
+}
+
+#tabsE li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+#tabsE a {
+	float: left;
+	background: url("tableftE.gif") no-repeat left top;
+	margin: 0;
+	padding: 0 0 0 4px;
+	text-decoration: none;
+	width: 20%;
+}
+
+#tabsE a span {
+	float: left;
+	display: block;
+	background: url("tabrightE.gif") no-repeat right top;
+	padding: 5px 15px 4px 6px;
+	color: #FFF;
+}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#tabsE a span {
+	float: none;
+}
+/* End IE5-Mac hack */
+#tabsE a:hover span {
+	color: #FFF;
+}
+
+#tabsE a:hover {
+	background-position: 0% -42px;
+}
+
+#tabsE a:hover span {
+	background-position: 100% -42px;
+}
+
+#tabsE #current a {
+	background-position: 0% -42px;
+}
+
+#tabsE #current a span {
+	background-position: 100% -42px;
+}
+
+--> /* °Ô½ÃÆÇ css */
+table {
+	border-collapse: collapse;
+	border-bottom-color: #000;
+	text-align: center;
+}
+
+tbody tr:first-child {
+	color: #000;
+	text-align: center;
+	
+}
+
+thead {
+	background-color: #f4f4f4; /* border-bottom:1px solid #f4f4f4; */
+}
+
+tbody tr:hover {
+	cursor: pointer;
+}
+
+tbody tr:first-child th {
+	background: #000;
+}
+
+tbody tr:first-child th p font {
+	color: #fff;
+}
+
+
+tbody tr:not(:FIRST-CHILD){
+	border-bottom: 1px solid #555;
+}
+
+tbody tr:not(:first-child) th p a {
+	text-decoration: none;
+}
+
+</style>
+</head>
+<body>
+
+	<h2 style="text-align: center;">SAFEME ¸ð´ÏÅÍ¸µ ¼­ºñ½º</h2>
+	<div id="tabsE" style="text-align:center; margin:0 atuo;">
+		<ul>
+			<!-- CSS Tabs -->
+			<li><a href="HomeImage.jsp"><span>È¨</span></a></li>
+			<li><a href="recordkesipan.jsp"><span>³ìÈ­µÈ ½Å°í¹°</span></a></li>
+			<li><a href="sinkokyesipan.jsp"><span>½Å°í°Ô½ÃÆÇ</span></a></li>
+			<li><a href="list1.jsp"><span>°øÁö»çÇ×</span></a></li>
+		</ul>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#fff"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="택시 신고"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#bf9000"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="택시 번호를 신고할 때"
+            android:textColor="#848484" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text=" '서울12가3456'과 같이 전체 번호를 입력해주세요."
+            android:textColor="#848484" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="국번을 입력 후 버튼을 누르면 메세지로 연결됩니다."
+            android:textColor="#020202" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/guide_editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:padding="10dp"
+        android:textSize="15dp"
+        android:hint="국번을 입력해주세요"
+        android:textColorHint="#999"
+        android:background="#f2f2f2"/>
+
+    <Button
+        android:id="@+id/guide_taxi1"
+        android:background="#ffc000"
+        android:textColor="#000"
+        android:padding="10dp"
+        android:textSize="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="문자신고 : (국번입력)-120"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/cancelTaxi"
+        android:background="#00ff0000"
+        android:textColor="#ffc000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="확인"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>
