@@ -1,15 +1,15 @@
-package safeme.com.naver.cafe.safeme.http.service;
+package safeme.com.naver.cafe.safeme.http.callback;
 
 import android.os.Handler;
 
 import safeme.com.naver.cafe.safeme.constants.Constants;
 import safeme.com.naver.cafe.safeme.http.HttpUtils;
-import safeme.com.naver.cafe.safeme.http.IServiceController;
+import safeme.com.naver.cafe.safeme.http.ProcessCallback;
 
 /**
  * Created by dasom on 2017-04-30.
  */
-public class NotifyInfoSendService implements IServiceController {
+public class NotifyInfoSendService implements ProcessCallback {
     private static final int WHAT = Constants.SEND_NOFITYINFO;
     private Handler handler;
 
@@ -25,6 +25,6 @@ public class NotifyInfoSendService implements IServiceController {
 
     @Override
     public void onPostExecute(Object... objects) {
-        handler.sendMessage(HttpUtils.getMessage(WHAT));
+        handler.sendMessage(HttpUtils.getMessage(WHAT, null));
     }
 }

@@ -14,74 +14,80 @@ import java.util.List;
 
 import safeme.com.naver.cafe.safeme.R;
 import safeme.com.naver.cafe.safeme.constants.Constants;
-import safeme.com.naver.cafe.safeme.parser.JSONReciever;
-import safeme.com.naver.cafe.safeme.parser.JSONSender;
+import safeme.com.naver.cafe.safeme.http.HttpConnector;
+import safeme.com.naver.cafe.safeme.http.HttpUtils;
+import safeme.com.naver.cafe.safeme.http.ProcessCallback;
+import safeme.com.naver.cafe.safeme.http.callback.ReceivePoliceAdressCallback;
+import safeme.com.naver.cafe.safeme.http.callback.UpdatePolicePositionCallback;
+import safeme.com.naver.cafe.safeme.obj.PoliceAddress;
 
 
 // 주소로 이루어진 경찰서위치 DB를 지오코딩으로 위경도를 구해 다시 DB로 넘기는 클래스입니다.
 public class GetPoliceLatLng extends FragmentActivity {
 
-    private String[][] getPoliceLocation = null;
+    private List<PoliceAddress> policeAddressList = null;
     private TextView log;
 
     private String TAG = "safeme";
 
-    private Handler mHandler = new Handler(){
+    private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            switch (msg.what){
+            switch (msg.what) {
                 case Constants.GET_POLICE_ADDRESS:
-                    getPoliceLocation = (String[][])msg.obj;
-                    log.append("받은 데이터 갯수 : "+getPoliceLocation.length+"\n\n");
-                    Log.d("safeme", "lengthlenght : "+getPoliceLocation.length);
+                    policeAddressList = (List<PoliceAddress>) msg.obj;
+                    log.append("받은 데이터 갯수 : " + policeAddressList.size() + "\n\n");
+                    Log.d("safeme", "lengthlenght : " + policeAddressList.size());
                     Geocoder coder = new Geocoder(getApplicationContext());
 
                     // 첫번째 경우
-                    /*for (int i = 0; i < getPoliceLocation.length; i++) {
-                        try {
-                            List<Address> addresses = coder.getFromLocationName(getPoliceLocation[i][1], 1);
-
-                            if (addresses != null && addresses.size() > 0) {
-                                Address latlng = addresses.get(0);
-                                log.append(getPoliceLocation[i][0]+", "+getPoliceLocation[i][1]+", "+latlng.getLatitude()+", "+latlng.getLongitude()+"\n");
-                                Log.d("safeme", "length latlng : " + getPoliceLocation[i][0]+ ", "+ latlng.getLatitude() + ", " + latlng.getLongitude());
-                                String sendData = "?id="+getPoliceLocation[i][0]+"&lat="+latlng.getLatitude()+"&lon="+latlng.getLongitude();
-                                JSONSender policeposSender = new JSONSender();
-                                policeposSender.setHandler(mHandler);
-                                policeposSender.setUrl(Constants.PARSING_URL + Constants.PARSING_DIR_UPDATEPOLICEPOSLATLNG+sendData);
-                                policeposSender.setParseType(Constants.SEND_POLICE_LATLNG);
-                                policeposSender.start();
-                            }
-                        } catch (IOException e) {
-                            Log.d("safeme", "onlocation gps addr : 주소 획득 실패");
-                            e.printStackTrace();
-                        }
-
-                    }*/
+//                    for (int i = 0; i < policeAddressList.size(); i++) {
+//                        try {
+//                            List<Address> addresses = coder.getFromLocationName(policeAddressList.get(i).getLoc_str(), 1);
+//
+//                            if (addresses != null && addresses.size() > 0) {
+//                                Address latlng = addresses.get(0);
+//                                log.append(policeAddressList.get(i).toString() + ", " + latlng.getLatitude() + ", " + latlng.getLongitude() + "\n");
+//                                Log.d("safeme", "length latlng : " + policeAddressList.get(i).getId() + ", " + latlng.getLatitude() + ", " + latlng.getLongitude());
+//                                String sendData = "?id=" + policeAddressList.get(i).getId() + "&lat=" + latlng.getLatitude() + "&lon=" + latlng.getLongitude();
+//
+//                                String url = Constants.PARSING_URL + Constants.PARSING_DIR_UPDATEPOLICEPOSLATLNG + sendData;
+//                                ProcessCallback callback = new UpdatePolicePositionCallback();
+//
+//                                HttpConnector httpConnector = HttpUtils.getHttpConnector(url, callback, handler);
+//                                httpConnector.start();
+//                            }
+//                        } catch (IOException e) {
+//                            Log.d("safeme", "onlocation gps addr : 주소 획득 실패");
+//                            e.printStackTrace();
+//                        }
+//
+//                    }
 
                     // 두번째 경우
-                    for (int i = 0; i < getPoliceLocation.length; i++) {
+                    for (int i = 0; i < policeAddressList.size(); i++) {
                         try {
-                            String addr = getPoliceLocation[i][1];
+                            String addr = policeAddressList.get(i).getLoc_str();
                             String[] temp = addr.split(" ");
                             addr = "";
-                            for(int j=0; j<temp.length-1; j++){
+                            for (int j = 0; j < temp.length - 1; j++) {
                                 addr = addr + temp[j] + "%20";
                             }
-                            addr = addr + temp[temp.length-1];
-                            List<Address> addresses = coder.getFromLocationName(getPoliceLocation[i][1], 1);
+                            addr = addr + temp[temp.length - 1];
+                            List<Address> addresses = coder.getFromLocationName(policeAddressList.get(i).getLoc_str(), 1);
 
                             if (addresses != null && addresses.size() > 0) {
                                 Address latlng = addresses.get(0);
-                                //log.append(getPoliceLocation[i][0]+", "+getPoliceLocation[i][1]+", "+latlng.getLatitude()+", "+latlng.getLongitude()+"\n");
-                                Log.d("safeme", "length latlng : " + getPoliceLocation[i][0]+ ", "+ latlng.getLatitude() + ", " + latlng.getLongitude());
-                                String sendData = "?id="+getPoliceLocation[i][0]+"&str="+addr+"&lat="+latlng.getLatitude()+"&lon="+latlng.getLongitude();
-                                JSONSender policeposSender = new JSONSender();
-                                policeposSender.setHandler(mHandler);
-                                policeposSender.setUrl(Constants.PARSING_URL + Constants.PARSING_DIR_UPDATEPOLICEPOSLATLNG+sendData);
-                                policeposSender.setParseType(Constants.SEND_POLICE_LATLNG);
-                                policeposSender.start();
+//                                log.append(policeAddressList[i][0]+", "+policeAddressList[i][1]+", "+latlng.getLatitude()+", "+latlng.getLongitude()+"\n");
+                                Log.d("safeme", "length latlng : " + policeAddressList.get(i).getId() + ", " + latlng.getLatitude() + ", " + latlng.getLongitude());
+                                String sendData = "?id=" + policeAddressList.get(i).getId() + "&str=" + addr + "&lat=" + latlng.getLatitude() + "&lon=" + latlng.getLongitude();
+
+                                String url = Constants.PARSING_URL + Constants.PARSING_DIR_UPDATEPOLICEPOSLATLNG + sendData;
+                                ProcessCallback callback = new UpdatePolicePositionCallback();
+
+                                HttpConnector httpConnector = HttpUtils.getHttpConnector(url, callback, handler);
+                                httpConnector.start();
                             }
                         } catch (IOException e) {
                             Log.d("safeme", "onlocation gps addr : 주소 획득 실패");
@@ -99,21 +105,21 @@ public class GetPoliceLatLng extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_getlatlng);
-        log = (TextView)findViewById(R.id.log);
+        log = (TextView) findViewById(R.id.log);
 
         // 첫번째 경우
-        /*JSONReciever getpoliceLatLng = new JSONReciever();
-        getpoliceLatLng.setHandler(mHandler);
-        getpoliceLatLng.setUrl(Constants.PARSING_URL + Constants.PARSING_DIR_GETPOLICEPOSADDR);
-        getpoliceLatLng.setParseType(Constants.GET_POLICE_ADDRESS);
-        getpoliceLatLng.start();*/
+//        ProcessCallback serviceController = new ReceivePoliceAdressCallback();
+//        String url = "Constants.PARSING_URL + Constants.PARSING_DIR_GETPOLICEPOSADDR";
+//
+//        HttpConnector httpConnector = HttpUtils.getHttpConnector(url, serviceController, handler);
+//        httpConnector.start();
 
         // 두번째 경우
-        JSONReciever getpoliceLatLng = new JSONReciever();
-        getpoliceLatLng.setHandler(mHandler);
-        getpoliceLatLng.setUrl("http://192.168.0.6:8080/SafeMe/backpage/Policepos_getPos.jsp");
-        getpoliceLatLng.setParseType(Constants.GET_POLICE_ADDRESS);
-        getpoliceLatLng.start();
+        ProcessCallback serviceController = new ReceivePoliceAdressCallback();
+        String url = "http://192.168.0.6:8080/SafeMe/backpage/Policepos_getPos.jsp";
+
+        HttpConnector httpConnector = HttpUtils.getHttpConnector(url, serviceController, handler);
+        httpConnector.start();
 
     }
 }

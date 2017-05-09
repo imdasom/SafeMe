@@ -1,31 +1,18 @@
 package safeme.com.naver.cafe.safeme.map;
 
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AlertDialog;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -35,9 +22,13 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import safeme.com.naver.cafe.safeme.constants.Constants;
 import safeme.com.naver.cafe.safeme.R;
-import safeme.com.naver.cafe.safeme.parser.JSONReciever;
+import safeme.com.naver.cafe.safeme.constants.Constants;
+import safeme.com.naver.cafe.safeme.http.HttpConnector;
+import safeme.com.naver.cafe.safeme.http.HttpUtils;
+import safeme.com.naver.cafe.safeme.http.ProcessCallback;
+import safeme.com.naver.cafe.safeme.http.callback.ReceiveFootDataCallback;
+import safeme.com.naver.cafe.safeme.http.callback.ReceivePoliceDataCallback;
 
 /**
  * Created by safeme on 2015-12-02.
@@ -148,19 +139,21 @@ public class MyMapActivity extends FragmentActivity/* implements LocationListene
             }
         });
 
+        String url;
+        ProcessCallback callback;
+        HttpConnector httpConnector;
+
         // 먼저 전자발찌의 위치를 받아옵니다.
-        JSONReciever footposReciever = new JSONReciever();
-        footposReciever.setHandler(mHandler);
-        footposReciever.setUrl(Constants.PARSING_URL + Constants.PARSING_DIR_GETFOOTPOS);
-        footposReciever.setParseType(Constants.GET_FOOTPOS_DATA);
-        footposReciever.start();
+        url = Constants.PARSING_URL + Constants.PARSING_DIR_GETFOOTPOS;
+        callback = new ReceiveFootDataCallback();
+        httpConnector = HttpUtils.getHttpConnector(url, callback, mHandler);
+        httpConnector.start();
 
         // 다음으로 경찰서의 위치를 받아옵니다.
-        JSONReciever policeposReciever = new JSONReciever();
-        policeposReciever.setHandler(mHandler);
-        policeposReciever.setUrl(Constants.PARSING_URL + Constants.PARSING_DIR_GETPOLICEPOS);
-        policeposReciever.setParseType(Constants.GET_POLICEPOS_DATA);
-        policeposReciever.start();
+        url = Constants.PARSING_URL + Constants.PARSING_DIR_GETPOLICEPOS;
+        callback = new ReceivePoliceDataCallback();
+        httpConnector = HttpUtils.getHttpConnector(url, callback, mHandler);
+        httpConnector.start();
 
         logRecord.append("onCreate()\n");
     }//onCreate

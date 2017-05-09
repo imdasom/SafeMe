@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "safeme.com.naver.cafe.safeme"
         minSdkVersion 19
-        targetSdkVersion 19
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
     }
@@ -21,10 +21,11 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:19.1.0'
+    compile 'com.android.support:appcompat-v7:21.1.0'
     compile project(':libstreaming')
     compile files('libs/apache-mime4j.jar')
     compile files('libs/cos.jar')
     compile files('libs/httpmime.jar')
     compile 'com.google.android.gms:play-services:8.3.0'
+    compile 'com.google.code.gson:gson:2.3.1'
 }

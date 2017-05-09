@@ -15,7 +15,7 @@ import java.io.IOException;
 public class HttpConnector extends Thread {
     private String url;
     private Handler handler;
-    private IServiceController serviceController;
+    private ProcessCallback serviceController;
 
     public void setUrl(String url) {
         this.url = url;
@@ -25,8 +25,8 @@ public class HttpConnector extends Thread {
         this.handler = handler;
     }
 
-    public void setIServiceController(IServiceController serviceController) {
-        this.serviceController = serviceController;
+    public void setIServiceController(ProcessCallback processCallback) {
+        this.serviceController = processCallback;
     }
 
     @Override
