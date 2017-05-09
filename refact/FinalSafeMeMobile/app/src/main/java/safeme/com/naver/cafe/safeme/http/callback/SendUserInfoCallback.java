@@ -9,7 +9,7 @@ import safeme.com.naver.cafe.safeme.http.ProcessCallback;
 /**
  * Created by dasom on 2017-04-30.
  */
-public class NotifyInfoSendService implements ProcessCallback {
+public class SendUserInfoCallback implements ProcessCallback {
     private static final int WHAT = Constants.SEND_NOFITYINFO;
     private Handler handler;
 

@@ -28,7 +28,7 @@ public class Constants {
     final public static int ON_LOCATION_CHANGED = 12;
 
     // using in json parsing
-    final public static int SEND_VIDEOFILE = 20;
+    final public static int ON_FINISHED_SEND_VIDEO = 20;
     final public static int SEND_NOFITYINFO = 21;
     final public static int SEND_POLICE_LATLNG = 22;
     final public static int GET_POLICE_ADDRESS = 23;
@@ -43,9 +43,9 @@ public class Constants {
 
     // using in notify
     final public static int STREAM_ERROR = 40;
-    final public static int RECORD_FINISH = 41;
+    final public static int ON_FINISHED_RECORD_VIDEO = 41;
     final public static int SENDING_FINISH = 42;
-    final public static int FINISH_VIDEOACTIVITY = 43;
+    final public static int FINISH_VIDEO_ACTIVITY = 43;
     final public static int SENDING_VIDEO = 44;
     final public static int ALL_FINISH = 45;
 }

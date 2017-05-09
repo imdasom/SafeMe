@@ -11,12 +11,11 @@ import java.io.IOException;
  */
 public class IOUtils {
     public static File getVideoFile(String fileName) {
-        String path = Environment.getExternalStorageDirectory().getPath();
+        String path = Environment.getExternalStorageDirectory().getPath() + "/safeme/";
 
         //여기서 오류테스트하기 FILENAME이 null이 아닌지 등등의 테스트
-        return new File(path+"/safeme/"+fileName+".mp4");
+        return new File(path + fileName);
     }
-
 
     public static String readData(BufferedReader br) throws IOException {
         String line = "";

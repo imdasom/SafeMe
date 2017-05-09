@@ -15,7 +15,7 @@ import safeme.com.naver.cafe.safeme.http.ProcessCallback;
  * Created by dasom on 2017-04-30.
  */
 public class SendVideoFileCallback implements ProcessCallback {
-    private static final int WHAT = Constants.PARSING_ONPROGRESS;
+    private static final int WHAT = Constants.ON_FINISHED_SEND_VIDEO;
     private Handler handler;
     private String fileName;
 
