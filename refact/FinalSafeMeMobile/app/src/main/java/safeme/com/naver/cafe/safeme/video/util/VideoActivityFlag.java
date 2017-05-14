@@ -1,4 +1,4 @@
-package safeme.com.naver.cafe.safeme.video;
+package safeme.com.naver.cafe.safeme.video.util;
 
 /**
  * Created by dasom on 2017-05-09.

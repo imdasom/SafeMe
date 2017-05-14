@@ -1,4 +1,4 @@
-package safeme.com.naver.cafe.safeme.video;
+package safeme.com.naver.cafe.safeme.video.helper;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import safeme.com.naver.cafe.safeme.R;
 import safeme.com.naver.cafe.safeme.constants.Constants;
+import safeme.com.naver.cafe.safeme.video.util.VideoActivityFlag;
 
 /**
  * Created by dasom on 2017-05-09.

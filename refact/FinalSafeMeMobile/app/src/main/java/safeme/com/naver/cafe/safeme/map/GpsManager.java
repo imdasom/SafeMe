@@ -9,6 +9,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
@@ -38,7 +39,7 @@ public class GpsManager implements Serializable, android.location.LocationListen
     public LocationManager locationManager;
     public String provider;
     public ProgressDialog waitingdialog = null;
-    public MyVideoActivity.MyVideoHandler myVideoHandler;
+    public Handler myVideoHandler;
     public MyMapActivity.MyHandler myHandler;
 
     public GoogleMap mMap;
