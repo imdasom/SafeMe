@@ -1,4 +1,4 @@
-package safeme.com.naver.cafe.safeme.map;
+package safeme.com.naver.cafe.safeme.map.util;
 
 import android.location.Address;
 import android.location.Geocoder;
