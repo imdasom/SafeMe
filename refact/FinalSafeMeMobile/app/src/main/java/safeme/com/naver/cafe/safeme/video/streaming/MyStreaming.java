@@ -161,7 +161,7 @@ public class MyStreaming implements RtspClient.Callback,
 
     private void alertError(final String msg) {
         /*final String error = (msg == null) ? "Unknown error: " : msg;
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage(error).setPositiveButton("Ok",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
