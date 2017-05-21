@@ -74,6 +74,14 @@ public class GpsManager implements Serializable, android.location.LocationListen
         this.mContext = mContext;
     }
 
+    public Handler getMyVideoHandler() {
+        return myVideoHandler;
+    }
+
+    public void setMyVideoHandler(Handler myVideoHandler) {
+        this.myVideoHandler = myVideoHandler;
+    }
+
     public boolean isStartLocation() {
         return provider != null;
     }

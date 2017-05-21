@@ -1,9 +1,6 @@
 package safeme.com.naver.cafe.safeme.video.streaming;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.media.MediaMuxer;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -17,9 +14,7 @@ import net.majorkernelpanic.streaming.rtp.MyMuxing;
 import net.majorkernelpanic.streaming.rtsp.RtspClient;
 import net.majorkernelpanic.streaming.video.VideoQuality;
 
-import java.io.File;
 import java.io.IOException;
-import java.security.MessageDigest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
